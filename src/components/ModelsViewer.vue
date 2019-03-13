@@ -61,13 +61,13 @@
         },
         methods: {
             sort: function (key) {
-//                if (!key in this.sortOrders){
-//                    this.sortOrders[key]="asc";
-//                }
-//                else {
-//                    this.sortOrders[key]=this.sortOrders[key]==='asc'?'desc':'asc';
-//                }
-                this.sortRows(key);//,this.sortOrders[key]);
+                if (!key in this.sortOrders){
+                    this.sortOrders[key]="asc";
+                }
+                else {
+                    this.sortOrders[key]=this.sortOrders[key]==='asc'?'desc':'asc';
+                }
+                this.sortRows(key,this.sortOrders[key]);
             },
             changeHandler: function (key) {
                 //this.filter = {key:this.filter[key]};
@@ -87,7 +87,7 @@
             sortRows: function (field = 'mass', order = 'asc') {
                 if (!Object.keys(this.titles).includes(field) ||
                     !['asc', 'desc'].includes(order.toLowerCase())) {
-                    //console.log('no sorting');
+                    console.log('no sorting');
                     return;
                 }
                 order = order === 'asc' ? 1 : -1;
@@ -96,7 +96,7 @@
                     if (!isNaN(diff)) {
                         return order * diff;
                     }
-                    return order * (a[field] < b[field] ? -1 : 0);
+                    return order * (a[field] < b[field] ? -1 : 1);
                 });
             },
             filterRows: function (field, value) {
@@ -151,5 +151,5 @@
     tr:nth-child(even) {
         background-color: #dddddd;
     }
-    
+
 </style>

@@ -1,5 +1,6 @@
 let data = {
     "titles": {
+        "_id":"_id",
         "name": "Name",
         "height": "Height",
         "mass": "Mass",
@@ -10,6 +11,7 @@ let data = {
         "gender": "Gender"
     },
     "items": [{
+        "_id":0,
         "name": "Luke Skywalker",
         "height": "172",
         "mass": "77",
@@ -19,6 +21,7 @@ let data = {
         "birth_year": "19BBY",
         "gender": "male",
     }, {
+        "_id":1,
         "name": "C-3PO",
         "height": "167",
         "mass": "75",
@@ -28,6 +31,7 @@ let data = {
         "birth_year": "112BBY",
         "gender": "n/a",
     }, {
+        "_id":2,
         "name": "R2-D2",
         "height": "96",
         "mass": "32",
@@ -37,6 +41,7 @@ let data = {
         "birth_year": "33BBY",
         "gender": "n/a",
     }, {
+        "_id":3,
         "name": "Darth Vader",
         "height": "202",
         "mass": "136",
@@ -46,6 +51,7 @@ let data = {
         "birth_year": "41.9BBY",
         "gender": "male",
     }, {
+        "_id":4,
         "name": "Leia Organa",
         "height": "150",
         "mass": "49",
@@ -55,6 +61,7 @@ let data = {
         "birth_year": "19BBY",
         "gender": "female",
     }, {
+        "_id":5,
         "name": "Owen Lars",
         "height": "178",
         "mass": "120",
@@ -63,16 +70,8 @@ let data = {
         "eye_color": "blue",
         "birth_year": "52BBY",
         "gender": "male",
-    }, {
-        "name": "Beru Whitesun lars",
-        "height": "165",
-        "mass": "75",
-        "hair_color": "brown",
-        "skin_color": "light",
-        "eye_color": "blue",
-        "birth_year": "47BBY",
-        "gender": "female",
-    }, {
+    },{
+        "_id":6,
         "name": "R5-D4",
         "height": "97",
         "mass": "32",
@@ -82,6 +81,7 @@ let data = {
         "birth_year": "unknown",
         "gender": "n/a",
     }, {
+        "_id":7,
         "name": "Biggs Darklighter",
         "height": "183",
         "mass": "84",
@@ -91,6 +91,7 @@ let data = {
         "birth_year": "24BBY",
         "gender": "male",
     }, {
+        "_id":8,
         "name": "Obi-Wan Kenobi",
         "height": "182",
         "mass": "77",
@@ -100,6 +101,7 @@ let data = {
         "birth_year": "57BBY",
         "gender": "male",
     }, {
+        "_id":9,
         "name": "Anakin Skywalker",
         "height": "188",
         "mass": "84",
@@ -109,6 +111,7 @@ let data = {
         "birth_year": "41.9BBY",
         "gender": "male",
     }, {
+        "_id":10,
         "name": "Wilhuff Tarkin",
         "height": "180",
         "mass": "unknown",
@@ -118,6 +121,7 @@ let data = {
         "birth_year": "64BBY",
         "gender": "male",
     }, {
+        "_id":11,
         "name": "Chewbacca",
         "height": "228",
         "mass": "112",
@@ -127,6 +131,7 @@ let data = {
         "birth_year": "200BBY",
         "gender": "male",
     }, {
+        "_id":12,
         "name": "Han Solo",
         "height": "180",
         "mass": "80",
@@ -136,6 +141,7 @@ let data = {
         "birth_year": "29BBY",
         "gender": "male",
     }, {
+        "_id":13,
         "name": "Greedo",
         "height": "173",
         "mass": "74",
@@ -145,15 +151,17 @@ let data = {
         "birth_year": "44BBY",
         "gender": "male",
     }, {
+        "_id":14,
         "name": "Jabba Desilijic Tiure",
         "height": "175",
-        "mass": "1,358",
+        "mass": "1358",
         "hair_color": "n/a",
         "skin_color": "green-tan, brown",
         "eye_color": "orange",
         "birth_year": "600BBY",
         "gender": "hermaphrodite",
     }, {
+        "_id":15,
         "name": "Wedge Antilles",
         "height": "170",
         "mass": "77",
@@ -163,6 +171,7 @@ let data = {
         "birth_year": "21BBY",
         "gender": "male",
     }, {
+        "_id":16,
         "name": "Jek Tono Porkins",
         "height": "180",
         "mass": "110",
@@ -171,7 +180,7 @@ let data = {
         "eye_color": "blue",
         "birth_year": "unknown",
         "gender": "male",
-    }, {
+    }, {"_id":17,
         "name": "Yoda",
         "height": "66",
         "mass": "17",
@@ -181,6 +190,7 @@ let data = {
         "birth_year": "896BBY",
         "gender": "male",
     }, {
+        "_id":18,
         "name": "Palpatine",
         "height": "170",
         "mass": "75",
@@ -190,6 +200,7 @@ let data = {
         "birth_year": "82BBY",
         "gender": "male",
     }, {
+        "_id":19,
         "name": "Boba Fett",
         "height": "183",
         "mass": "78.2",
@@ -199,6 +210,7 @@ let data = {
         "birth_year": "31.5BBY",
         "gender": "male",
     }, {
+        "_id":20,
         "name": "IG-88",
         "height": "200",
         "mass": "140",
@@ -208,6 +220,7 @@ let data = {
         "birth_year": "15BBY",
         "gender": "none",
     }, {
+        "_id":21,
         "name": "Bossk",
         "height": "190",
         "mass": "113",
@@ -217,6 +230,7 @@ let data = {
         "birth_year": "53BBY",
         "gender": "male",
     }, {
+        "_id":22,
         "name": "Lando Calrissian",
         "height": "177",
         "mass": "79",
@@ -226,6 +240,7 @@ let data = {
         "birth_year": "31BBY",
         "gender": "male",
     }, {
+        "_id":23,
         "name": "Lobot",
         "height": "175",
         "mass": "79",
@@ -235,6 +250,7 @@ let data = {
         "birth_year": "37BBY",
         "gender": "male",
     }, {
+        "_id":24,
         "name": "Ackbar",
         "height": "180",
         "mass": "83",
@@ -244,6 +260,7 @@ let data = {
         "birth_year": "41BBY",
         "gender": "male",
     }, {
+        "_id":25,
         "name": "Mon Mothma",
         "height": "150",
         "mass": "unknown",
@@ -253,6 +270,7 @@ let data = {
         "birth_year": "48BBY",
         "gender": "female",
     }, {
+        "_id":26,
         "name": "Arvel Crynyd",
         "height": "unknown",
         "mass": "unknown",
@@ -262,6 +280,7 @@ let data = {
         "birth_year": "unknown",
         "gender": "male",
     }, {
+        "_id":27,
         "name": "Wicket Systri Warrick",
         "height": "88",
         "mass": "20",
@@ -271,6 +290,7 @@ let data = {
         "birth_year": "8BBY",
         "gender": "male",
     }, {
+        "_id":28,
         "name": "Nien Nunb",
         "height": "160",
         "mass": "68",
@@ -279,7 +299,17 @@ let data = {
         "eye_color": "black",
         "birth_year": "unknown",
         "gender": "male",
-    }]
+    }, {
+        "_id":29,
+        "name": "Beru Whitesun lars",
+        "height": "165",
+        "mass": "75",
+        "hair_color": "brown",
+        "skin_color": "light",
+        "eye_color": "blue",
+        "birth_year": "47BBY",
+        "gender": "female",
+    }, ]
 };
 
 class ItemsConvertor {
@@ -328,8 +358,7 @@ class ItemsConvertor {
 let one = 42;
 
 let ic = new ItemsConvertor();
-export default ic;
-console.log(ic.getFilteredRows('hair_color','brown'));
+export default data;
 // console.log(ic.getSortedRows('mass','desc'));
 //console.log(ic.titles);
 //console.log(Object.keys(data.titles).includes('moss'));

@@ -1,17 +1,23 @@
 <template>
     <div class="models">
-        <div>{{ msg }} for page {{pageid}}  </div>
+        <span class="nav">
+            <button v-on:click="prev">prev</button>
+            <button v-on:click="next">next</button>
+        </span>
+        <div>page #{{pageid}} showed.
+            people per page <input type="text" v-model.number="pageSize"></div>
 
         <table>
             <thead>
             <tr>
                 <td v-for="(title,key,index) in titles"
                     v-on:click="sort(key)">{{title}}
+                    <span>{{sortSymbols[sortOrders[key]]}}</span>
                 </td>
             </tr>
             <tr>
-                <td v-for="(title,key,index) in titles" class="col">
-                    <input type="text" size="4" placeholder="enter filter"
+                <td v-for="(title,key,index) in titles">
+                    <input type="text" size="4" placeholder="filter"
                            v-model="filter[key]"
                            v-on:input="changeHandler(key)"
                            v-on:focus="resetFilter">
@@ -20,7 +26,7 @@
             </tr>
             </thead>
 
-            <tr v-for="(employee,index) in employees">
+            <tr v-for="(employee,index) in paginatedEmployees">
                 <td v-for="(value,field,index2) in employee" v-on:click="handleEdit(index,field)">
                     <span v-show="isNotEdited(index,field)">
                         {{value}}</span>
@@ -49,25 +55,32 @@
             return {
                 titles: data.titles,
                 employees: data.items,
-                pageSize: 10,
+                pageSize: 5,
                 filter: {},
                 edited: {},
                 sortOrders: {},
-                pageid: this.$route.params.pageid || 1,
+                sortSymbols: {
+                    asc: '▼', desc: '▲'
+                },
+                pageid: this.$route.params.pageid || 0,
                 currentPage: function () {
                     return this.employees.splice(this.pageid * this.pageSize)
                 }
             }
         },
         methods: {
+            getPaginatedEmployees: function () {
+                return this.employees.slice(this.pageid * this.pageSize,
+                    (this.pageid +1 )* this.pageSize);
+            },
             sort: function (key) {
-                if (!key in this.sortOrders){
-                    this.sortOrders[key]="asc";
+                if (!key in this.sortOrders) {
+                    this.sortOrders[key] = "asc";
                 }
                 else {
-                    this.sortOrders[key]=this.sortOrders[key]==='asc'?'desc':'asc';
+                    this.sortOrders[key] = this.sortOrders[key] === 'asc' ? 'desc' : 'asc';
                 }
-                this.sortRows(key,this.sortOrders[key]);
+                this.sortRows(key, this.sortOrders[key]);
             },
             changeHandler: function (key) {
                 //this.filter = {key:this.filter[key]};
@@ -111,15 +124,35 @@
             resetFilter: function () {
                 this.filter = {};
                 this.employees = data.items;
+                this.pageid=0;
             },
             isNotEdited: function (index, field) {
                 return !(this.employees[index]._id === this.edited._id
                     && field === this.edited.field);
+            },
+            prev: function () {
+                if (this.pageid>0){
+                    this.pageid--;
+                }
+            },
+            next: function () {
+                if (this.pageid<this.lastPage){
+                    this.pageid++;}
+
             }
         },
         watch: {
             '$route'(to) {
-                this.pageid = to.params.pageid || 1;
+                this.pageid = to.params.pageid || 0;
+            },
+        },
+        computed: {
+            paginatedEmployees: function () {
+                return this.employees.slice(this.pageid * this.pageSize,
+                    (this.pageid +1 )* this.pageSize);
+            },
+            lastPage: function () {
+                return Math.ceil(this.employees.length/this.pageSize);
             }
         }
     }

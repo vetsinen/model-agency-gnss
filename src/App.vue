@@ -1,10 +1,5 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/page/2">page 2</router-link> |
-      <router-link to="/about">About Vue</router-link>
-    </div>
     <router-view/>
 
   </div>

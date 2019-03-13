@@ -1,12 +1,15 @@
 ```
-Целью тестового задания является создание и публикация на Github/Bitbucket переиспользуемого vue-компонента (компонентов).
-Компонентом является таблица со следующим функционалом:
-1. Сортировка по столбцам
-2. Фильтрация по столбцам
-3. Возможность редактирования ячеек
-4. Пагинация
-Инициатива приветствуется. Как можно улучшить взаимодействие пользователя с нашим компонентом? На какие подкомпоненты можно выделить? Желательно чтобы таблица была универсальной и могла работать с разными структурами данных.
-```
+This repository is an open source ERP for model agency, sponsored by Adel Agency.
+The core of this app is a reusable vue-component(s).
+The app provides such opportunities:
+
+1. columns sorting
+2. columns filtration
+3. cell editing
+4. pagination
+
+You are welcome to contribute your ideas on usability and code base. How app can be splitted in components? How this app can be universal to different data types
+Here is an initial set of data initialData.json```
 
 # gnss
 
@@ -25,9 +28,6 @@ yarn run serve
 yarn run build
 ```
 
-### Run your tests
-```
-yarn run test
 ```
 
 ### Lints and fixes files

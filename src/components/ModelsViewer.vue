@@ -26,7 +26,7 @@
             </tr>
             </thead>
 
-            <tr v-for="(employee,index) in paginatedEmployees">
+            <tr v-for="(employee,index) in paginatedEmployees" :key="employee._id">
                 <td v-for="(value,field,index2) in employee" v-on:click="handleEdit(index,field)">
                     <span v-show="isNotEdited(index,field)">
                         {{value}}</span>
